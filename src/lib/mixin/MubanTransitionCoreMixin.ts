@@ -15,7 +15,7 @@ function mubanTransitionCoreMixin<TBase extends Constructor<ICoreComponent>>(Bas
     constructor(...args: any[]) {
       super(...args);
 
-      this.eventNamespace = '.' + ++MubanTransitionCoreMixin.eventNamespaceCount;
+      this.eventNamespace = `.${++MubanTransitionCoreMixin.eventNamespaceCount}`;
       this.componentId = this.displayName + this.eventNamespace;
     }
 

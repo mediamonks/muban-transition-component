@@ -1,6 +1,5 @@
 import chai, { expect } from 'chai';
 import sinon from 'sinon';
-import 'chai/register-should';
 import sinonChai from 'sinon-chai';
 import { render, getComponent } from './util/index.spec';
 import { TransitionId } from '../test/util/component/ChildComponentA/ChildComponentATransitionController';
