@@ -6,7 +6,7 @@
     "baseUrl": "./src/",
     "rootDir": "./src/",
     "forceConsistentCasingInFileNames": true,
-    "module": "es2015",
+    "module": "ES2020",
     "moduleResolution": "node",
     "noEmit": false,
     "noImplicitAny": false,
@@ -16,17 +16,21 @@
     "noUnusedParameters": true,
     "pretty": true,
     "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
     "strictNullChecks": false,
     "sourceMap": true,
-    "target": "ESNext",
+    "target": "ES2020",
     "lib": [
       "DOM",
       "DOM.Iterable",
-      "ES2017"
+      "ES2020"
     ]
   },
   "include": [
     "./src/**/*",
     "./types/**/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules/**/*"
   ]
 }

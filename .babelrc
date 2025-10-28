@@ -1,23 +1,26 @@
 {
   "presets": [
-    ["@babel/env", {
+    ["@babel/preset-env", {
       "targets": {
         "browsers": ["last 2 versions"],
-        "node": "6"
+        "node": "14"
       },
       "loose": true,
       "useBuiltIns": false
     }],
-    "@babel/preset-stage-3",
-    "@babel/typescript"
+    "@babel/preset-typescript"
   ],
   "plugins": [
     ["@babel/plugin-transform-runtime", {
       "helpers": true,
-      "polyfill": false,
-      "regenerator": false,
-      "moduleName": "@babel/runtime"
-    }]
+      "regenerator": false
+    }],
+    "@babel/plugin-syntax-dynamic-import",
+    ["@babel/plugin-transform-class-properties", { "loose": true }],
+    ["@babel/plugin-transform-private-methods", { "loose": true }],
+    ["@babel/plugin-transform-private-property-in-object", { "loose": true }],
+    "@babel/plugin-transform-json-strings",
+    "@babel/plugin-transform-object-rest-spread"
   ],
   "env": {
     "test": {
