@@ -3,7 +3,9 @@ import ChildComponentBTransitionController from './ChildComponentBTransitionCont
 import mubanTransitionMixin from '../../../../src/lib/mixin/MubanTransitionMixin';
 import mubanTransitionCoreMixin from '../../../../src/lib/mixin/MubanTransitionCoreMixin';
 
-export default class ChildComponentB extends mubanTransitionMixin(mubanTransitionCoreMixin(CoreComponent)) {
+export default class ChildComponentB extends mubanTransitionMixin(
+  mubanTransitionCoreMixin(CoreComponent),
+) {
   static displayName: string = 'child-component-b';
   public transitionController: ChildComponentBTransitionController;
 

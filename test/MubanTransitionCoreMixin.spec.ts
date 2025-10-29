@@ -1,18 +1,19 @@
 import { expect } from 'chai';
-import { render, getComponent } from './util/index.spec';
 import EventDispatcher from 'seng-event/lib/EventDispatcher';
+import { render, getComponent } from './util/index.spec';
+import ChildComponentA from './util/component/ChildComponentA/ChildComponentA';
 
-describe('MubanTransitionCoreMixin.spec', function () {
-  let component;
+describe('MubanTransitionCoreMixin.spec', () => {
+  let component: ChildComponentA;
 
-  before(function () {
+  before(() => {
     render();
-    component = getComponent('child-component-a');
+    component = getComponent('child-component-a') as ChildComponentA;
   });
 
   describe('displayName', () => {
     it('should return the displayName', () => {
-      expect(component.displayName).to.equal('child-component-a');
+      expect(ChildComponentA.displayName).to.equal('child-component-a');
     });
   });
 

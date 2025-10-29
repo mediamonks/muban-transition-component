@@ -10,15 +10,12 @@ module.exports = {
   env: {
     browser: true,
   },
-  extends: [
-    'eslint:recommended',
-    'airbnb-base',
-  ],
+  extends: ['eslint:recommended', 'airbnb-base'],
   plugins: ['import', 'prettier', '@typescript-eslint'],
   settings: {
-    "import/resolver": {
-      "node": true,
-      "typescript": true
+    'import/resolver': {
+      node: true,
+      typescript: true,
     },
   },
   rules: {
@@ -35,7 +32,12 @@ module.exports = {
     'max-len': 0,
     'prettier/prettier': [
       'error',
-      { singleQuote: true, trailingComma: 'all', printWidth: 100, tabWidth: 2 },
+      {
+        singleQuote: true,
+        trailingComma: 'all',
+        printWidth: 100,
+        tabWidth: 2,
+      },
     ],
     // only for use with getter-setters
     'no-underscore-dangle': 0,

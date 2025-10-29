@@ -1,7 +1,6 @@
-import { TimelineMax } from 'gsap';
+import TransitionDirection from 'transition-controller/lib/enum/TransitionDirection';
 import MubanTransitionController from '../../../../src/lib/util/MubanTransitionController';
 import ChildComponentA from './ChildComponentA';
-import TransitionDirection from 'transition-controller/lib/enum/TransitionDirection';
 
 export const TransitionId = {
   LOOP_1: 'loop-1',
@@ -15,22 +14,26 @@ export const TransitionId = {
   },
 };
 
-class ChildComponentATransitionController extends MubanTransitionController<ChildComponentA> {
+class ChildComponentATransitionController extends MubanTransitionController {
   /**
    * @public
    * @method setupTransitionInTimeline
    * @description Use this method to setup your transition in timeline
    * */
-  protected setupTransitionInTimeline(timeline: TimelineMax, parent: ChildComponentA, id: string): void {
+  protected setupTransitionInTimeline(
+    timeline: gsap.core.Timeline,
+    parent: ChildComponentA,
+    id: string,
+  ): void {
     switch (id) {
       case TransitionId[TransitionDirection.IN].TRANSITION_ID_1:
-        timeline.fromTo(parent.element, 0.2, { opacity: 0, }, { opacity: 1 });
+        timeline.fromTo(parent.element, { opacity: 0 }, { opacity: 1, duration: 0.2 });
         break;
       case TransitionId[TransitionDirection.IN].TRANSITION_ID_2:
-        timeline.fromTo(parent.element, 0.2, { width: 0, }, { width: 100 });
+        timeline.fromTo(parent.element, { width: 0 }, { width: 100, duration: 0.2 });
         break;
       default:
-        timeline.fromTo(parent.element, 0.2, { left: 0, }, { left: 100 });
+        timeline.fromTo(parent.element, { left: 0 }, { left: 100, duration: 0.2 });
         break;
     }
   }
@@ -40,16 +43,20 @@ class ChildComponentATransitionController extends MubanTransitionController<Chil
    * @method setupTransitionOutTimeline
    * @description Use this method to setup your transition out timeline
    * */
-  protected setupTransitionOutTimeline(timeline: TimelineMax, parent: ChildComponentA, id: string): void {
+  protected setupTransitionOutTimeline(
+    timeline: gsap.core.Timeline,
+    parent: ChildComponentA,
+    id: string,
+  ): void {
     switch (id) {
       case TransitionId[TransitionDirection.OUT].TRANSITION_ID_1:
-        timeline.to(parent.element, 0.2, { opacity: 0, });
+        timeline.to(parent.element, { opacity: 0, duration: 0.2 });
         break;
       case TransitionId[TransitionDirection.OUT].TRANSITION_ID_2:
-        timeline.to(parent.element, 0.2, { width: 0, });
+        timeline.to(parent.element, { width: 0, duration: 0.2 });
         break;
       default:
-        timeline.to(parent.element, 0.2, { left: 0, });
+        timeline.to(parent.element, { left: 0, duration: 0.2 });
         break;
     }
   }
@@ -59,13 +66,17 @@ class ChildComponentATransitionController extends MubanTransitionController<Chil
    * @method setupLoopingAnimationTimeline
    * @description Use this method to setup your looping animation timeline
    * */
-  protected setupLoopingAnimationTimeline(timeline: TimelineMax, parent: ChildComponentA,  id: string): void {
+  protected setupLoopingAnimationTimeline(
+    timeline: gsap.core.Timeline,
+    parent: ChildComponentA,
+    id: string,
+  ): void {
     switch (id) {
       case TransitionId.LOOP_1:
-        timeline.fromTo(parent.element, 0.2, { opacity: 0, }, { opacity: 1 });
+        timeline.fromTo(parent.element, { opacity: 0 }, { opacity: 1, duration: 0.2 });
         break;
       default:
-        timeline.fromTo(parent.element, 0.2, { left: 0, }, { left: 100 });
+        timeline.fromTo(parent.element, { left: 0 }, { left: 100, duration: 0.2 });
         break;
     }
   }
