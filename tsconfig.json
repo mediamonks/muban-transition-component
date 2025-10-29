@@ -23,5 +23,5 @@
     "lib": ["DOM", "DOM.Iterable", "ES2020"]
   },
   "include": ["./src/**/*", "./types/**/*.d.ts"],
-  "exclude": ["node_modules", "**/*.spec.ts", "test"]
+  "exclude": ["node_modules", "**/*.spec.ts", "test", "example"]
 }

@@ -3,7 +3,9 @@ import mubanTransitionMixin from '../../../../../src/lib/mixin/MubanTransitionMi
 import mubanTransitionCoreMixin from '../../../../../src/lib/mixin/MubanTransitionCoreMixin';
 import PrimaryButtonTransitionController from './PrimaryButtonTransitionController';
 
-export default class PrimaryButton extends mubanTransitionMixin(mubanTransitionCoreMixin(CoreComponent)) {
+export default class PrimaryButton extends mubanTransitionMixin(
+  mubanTransitionCoreMixin(CoreComponent),
+) {
   static displayName: string = 'primary-button';
   public transitionController: PrimaryButtonTransitionController;
 
@@ -17,6 +19,3 @@ export default class PrimaryButton extends mubanTransitionMixin(mubanTransitionC
     super.dispose();
   }
 }
-
-
-

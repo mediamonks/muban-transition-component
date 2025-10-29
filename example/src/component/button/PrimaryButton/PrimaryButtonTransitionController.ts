@@ -1,5 +1,4 @@
 import MubanTransitionController from '../../../../../src/lib/util/MubanTransitionController';
-import { Expo, TimelineMax } from 'gsap';
 import PrimaryButton from './PrimaryButton';
 
 class PrimaryButtonTransitionController extends MubanTransitionController {
@@ -8,17 +7,25 @@ class PrimaryButtonTransitionController extends MubanTransitionController {
    *
    * @protected
    * @method setupTransitionInTimeline
-   * @param {TimelineMax} timeline The transition in timeline
+   * @param {gsap.core.Timeline} timeline The transition in timeline
    * @param {PrimaryButton} parent The reference to the parent controller
    * @param {string} id The transition id that was provided when constructing the controller
    */
-  protected setupTransitionInTimeline(
-    timeline:TimelineMax,
-    parent:PrimaryButton): void {
-    timeline.fromTo(parent.element, 0.4, {
-      scale: 0,
-      opacity: 0,
-    }, { opacity: 1, scale: 1, clearProps: 'all', ease: Expo.easeOut });
+  protected setupTransitionInTimeline(timeline: gsap.core.Timeline, parent: PrimaryButton): void {
+    timeline.fromTo(
+      parent.element,
+      {
+        scale: 0,
+        opacity: 0,
+      },
+      {
+        duration: 0.4,
+        opacity: 1,
+        scale: 1,
+        clearProps: 'all',
+        ease: 'expo.out',
+      },
+    );
   }
 
   /**
@@ -26,14 +33,12 @@ class PrimaryButtonTransitionController extends MubanTransitionController {
    *
    * @protected
    * @method setupTransitionOutTimeline
-   * @param {TimelineMax} timeline The transition in timeline
+   * @param {gsap.core.Timeline} timeline The transition in timeline
    * @param {PrimaryButton} parent The reference to the parent controller
    * @param {string} id The transition id that was provided when constructing the controller
    */
-  protected setupTransitionOutTimeline(
-    timeline:TimelineMax,
-    parent:PrimaryButton): void {
-    timeline.to(parent.element, 0.6, { opacity: 0});
+  protected setupTransitionOutTimeline(timeline: gsap.core.Timeline, parent: PrimaryButton): void {
+    timeline.to(parent.element, { duration: 0.6, opacity: 0 });
   }
 
   /**
@@ -41,7 +46,7 @@ class PrimaryButtonTransitionController extends MubanTransitionController {
    *
    * @protected
    * @method setupLoopingAnimationTimeline
-   * @param {TimelineMax} timeline The transition in timeline
+   * @param {gsap.core.Timeline} timeline The transition in timeline
    * @param {PrimaryButton} parent The reference to the parent controller
    * @param {string} id The transition id that was provided when constructing the controller
    */
