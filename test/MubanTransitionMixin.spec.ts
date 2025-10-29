@@ -4,15 +4,16 @@ import sinonChai from 'sinon-chai';
 import { TransitionDirection } from 'transition-controller';
 import { render, getComponent } from './util/index.spec';
 import { TransitionId } from './util/component/ChildComponentA/ChildComponentATransitionController';
+import ChildComponentA from './util/component/ChildComponentA/ChildComponentA';
 
 chai.use(sinonChai);
 
 describe('MubanTransitionMixin.spec', () => {
-  let component;
+  let component: ChildComponentA;
 
   before(() => {
     render();
-    component = getComponent('child-component-a');
+    component = getComponent('child-component-a') as ChildComponentA;
   });
 
   describe('transitionOut', () => {
@@ -62,7 +63,7 @@ describe('MubanTransitionMixin.spec', () => {
 
   describe('inViewProgress', () => {
     it('should inViewProgress the component', () => {
-      expect(component.inViewProgress()).to.be.undefined;
+      expect(component.inViewProgress(1)).to.be.undefined;
     });
   });
 

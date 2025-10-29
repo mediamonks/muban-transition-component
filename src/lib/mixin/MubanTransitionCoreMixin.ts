@@ -1,5 +1,6 @@
 import EventDispatcher from 'seng-event';
 import ICoreComponent from 'muban-core/lib/interface/ICoreComponent';
+import { Constructor } from '../../types';
 import MubanTransitionVariable from '../data/MubanTransitionVariable';
 
 function mubanTransitionCoreMixin<TBase extends Constructor<ICoreComponent>>(Base: TBase) {
@@ -20,7 +21,7 @@ function mubanTransitionCoreMixin<TBase extends Constructor<ICoreComponent>>(Bas
     }
 
     public get displayName() {
-      return this.element.getAttribute(MubanTransitionVariable.componentAttribute);
+      return this.element.getAttribute(MubanTransitionVariable.componentAttribute) as string;
     }
   };
 }

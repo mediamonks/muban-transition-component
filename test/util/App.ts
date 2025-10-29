@@ -13,7 +13,7 @@ export default class App extends mubanTransitionMixin(mubanTransitionCoreMixin(C
 
   public scrollTrackerComponentManager: ScrollTrackerComponentManager<
     IMubanTransitionMixin
-  > = new ScrollTrackerComponentManager<IMubanTransitionMixin>({
+  > | null = new ScrollTrackerComponentManager<IMubanTransitionMixin>({
     setDebugLabel: true,
     debugBorderColor: 'red',
     resizeDebounce: 100,
@@ -33,7 +33,7 @@ export default class App extends mubanTransitionMixin(mubanTransitionCoreMixin(C
   public adopted(): void {
     this.getElements(`[${MubanTransitionVariable.scrollComponentAttribute}]`).forEach(
       (element: HTMLElement) => {
-        this.scrollTrackerComponentManager.addComponentToScrollTracker(
+        this.scrollTrackerComponentManager?.addComponentToScrollTracker(
           <IMubanTransitionMixin>getComponentForElement(element),
         );
       },

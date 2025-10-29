@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
-    "strict": true,
     "allowJs": false,
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "./",
-    "rootDir": "./",
+    "esModuleInterop": true,
+    "baseUrl": "./src/",
+    "rootDir": "./src/",
     "forceConsistentCasingInFileNames": true,
     "module": "ES2020",
     "moduleResolution": "node",
@@ -20,8 +20,8 @@
     "strictNullChecks": false,
     "sourceMap": true,
     "target": "ES2020",
-    "lib": ["DOM", "DOM.Iterable", "ES2020"],
+    "lib": ["DOM", "DOM.Iterable", "ES2020"]
   },
-  "include": ["./test/**/*", "./src/**/*", "./types/**/*.d.ts"],
-  "exclude": ["node_modules"]
+  "include": ["./src/**/*", "./types/**/*.d.ts"],
+  "exclude": ["node_modules", "**/*.spec.ts", "test"]
 }

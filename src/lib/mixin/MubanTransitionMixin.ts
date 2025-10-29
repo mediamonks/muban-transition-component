@@ -1,5 +1,6 @@
 import AbstractTransitionController from 'transition-controller';
 import EventDispatcher from 'seng-event/lib/EventDispatcher';
+import { Constructor } from '../../types';
 import { IMubanTransitionCoreMixin } from '../interface/IMubanTransitionCoreMixin';
 import { IMubanTransitionMixin } from '../interface/IMubanTransitionMixin';
 

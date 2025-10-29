@@ -19,6 +19,8 @@ module.exports = {
     },
   },
   rules: {
+    'import/no-relative-packages': 'off',
+    'import/no-extraneous-dependencies': 'off',
     'import/extensions': [
       'error',
       'always',
