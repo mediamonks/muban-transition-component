@@ -19,7 +19,7 @@
     "clean:test": "shx rm -rf coverage .nyc_output",
     "clean:npm": "shx rm -rf lib tmp index.js",
     "doc": "npm-run-all -p doc:*",
-    "doc:typedoc": "typedoc --out docs/ src/ --mode file",
+    "doc:typedoc": "typedoc --options typedoc.json",
     "lint": "npm-run-all lint:*",
     "lint:js": "eslint src --ext .js,.ts --cache",
     "lint:ts": "tslint src/**/*.ts -c tslint.json -p tsconfig.json -t verbose",
@@ -112,7 +112,7 @@
     "tslint": "^5.8.0",
     "tslint-config-airbnb": "^5.4.2",
     "tslint-config-prettier": "^1.6.0",
-    "typedoc": "^0.9.0",
+    "typedoc": "^0.25.0",
     "typescript": "^4.9.5"
   },
   "dependencies": {
