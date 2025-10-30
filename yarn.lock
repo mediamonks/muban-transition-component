@@ -1886,11 +1886,6 @@ bows@^1.7.0:
   dependencies:
     andlog "^1.0.2"
 
-bowser@^1.9.3:
-  version "1.9.4"
-  resolved "https://registry.yarnpkg.com/bowser/-/bowser-1.9.4.tgz#890c58a2813a9d3243704334fa81b96a5c150c9a"
-  integrity sha512-9IdMmj2KjigRq6oWhmwv1W36pDuA4STQZ8q6YO9um+x07xgYNCD3Oou+WP/3L1HNz7iqythGet3/p4wvc8AAwQ==
-
 brace-expansion@^1.1.7:
   version "1.1.12"
   resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-1.1.12.tgz#ab9b454466e5a8cc3a187beaad580412a9c5b843"
@@ -5838,7 +5833,7 @@ sax@^1.2.4:
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.4.1.tgz#44cc8988377f126304d3b3fc1010c733b929ef0f"
   integrity sha512-+aWOz7yVScEGoKNd4PA10LZ8sk0A/z5+nXQG5giUO5rprX9jgYsTdov9qCchZiPIZezbZH+jRut8nPodFAX4Jg==
 
-scroll-tracker-component-manager@^2.1.2:
+scroll-tracker-component-manager@^2.2.14:
   version "2.2.14"
   resolved "https://registry.yarnpkg.com/scroll-tracker-component-manager/-/scroll-tracker-component-manager-2.2.14.tgz#9697a16303b8ffb99e110ed05c1da5e4e67d1e8f"
   integrity sha512-UPHEaQiJenQKPz3VUm/h4Fe7536aTFgFcGJWdHqQjTNqsLHg9S7sXdWiQ25/oN8G8lElAVBy3Jsgmj9yX/6QNw==
