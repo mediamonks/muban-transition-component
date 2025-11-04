@@ -39,19 +39,19 @@ jobs:
         with:
           path: docs/
 
-  deploy:
-    needs: build
+  # deploy:
+  #   needs: build
 
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  #   environment:
+  #     name: github-pages
+  #     url: ${{ steps.deployment.outputs.page_url }}
 
-    runs-on: ubuntu-latest
+  #   runs-on: ubuntu-latest
 
-    steps:
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
+  #   steps:
+  #     - name: Setup Pages
+  #       uses: actions/configure-pages@v4
 
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+  #     - name: Deploy to GitHub Pages
+  #       id: deployment
+  #       uses: actions/deploy-pages@v4
