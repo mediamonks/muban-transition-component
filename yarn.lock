@@ -6365,15 +6365,6 @@ tr46@^1.0.1:
   dependencies:
     punycode "^2.1.0"
 
-"transition-controller@file:../transition-controller":
-  version "3.0.0"
-  dependencies:
-    "@babel/plugin-proposal-class-properties" "^7.3.4"
-    "@babel/plugin-proposal-object-rest-spread" "^7.3.4"
-    "@babel/runtime" "^7.3.4"
-    lodash "^4.17.11"
-    seng-event "^2.0.1"
-
 trim-right@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
