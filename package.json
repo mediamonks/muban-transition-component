@@ -6,6 +6,9 @@
   "license": "MIT",
   "main": "./index.js",
   "types": "./index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
   "pre-push": [
     "validate"
   ],
