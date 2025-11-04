@@ -1,4 +1,4 @@
-import TransitionDirection from 'transition-controller/lib/enum/TransitionDirection';
+import TransitionDirection from '@mediamonks/transition-controller/'lib/enum/TransitionDirection';
 import MubanTransitionController from '../../../../src/lib/util/MubanTransitionController';
 import ChildComponentA from './ChildComponentA';
 

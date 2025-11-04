@@ -1,5 +1,5 @@
 import CoreComponent from 'muban-core/lib/CoreComponent';
-import TransitionDirection from 'transition-controller/lib/enum/TransitionDirection';
+import TransitionDirection from '@mediamonks/transition-controller/'lib/enum/TransitionDirection';
 import ChildComponentATransitionController, {
   TransitionId,
 } from './ChildComponentATransitionController';
