@@ -1,5 +1,5 @@
 import gsap from 'gsap';
-import TransitionDirection from '@mediamonks/transition-controller/'lib/enum/TransitionDirection';
+import TransitionDirection from '@mediamonks/transition-controller/lib/enum/TransitionDirection';
 import getComponentForElement from 'muban-core/lib/utils/getComponentForElement';
 import MubanTransitionController from '../../../../../src/lib/util/MubanTransitionController';
 import DummyFoo from './DummyFoo';
