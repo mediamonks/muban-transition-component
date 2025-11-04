@@ -1,9 +1,28 @@
 {
-  "name": "muban-transition-component",
+  "name": "@mediamonks/muban-transition-component-legacy",
   "version": "5.0.0",
-  "description": "Javascript transitions for Muban components",
+  "description": "Provides GreenSock transition functionality to Muban components.",
+  "author": "frontend.monks",
+  "license": "MIT",
   "main": "./index.js",
   "types": "./index.d.ts",
+  "pre-push": [
+    "validate"
+  ],
+  "keywords": [
+    "seng",
+    "mediamonks",
+    "muban",
+    "transition",
+    "muban-transition-component"
+  ],
+  "bugs": {
+    "url": "https://github.com/riccomediamonks/muban-transition-component/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/riccomediamonks/muban-transition-component.git"
+  },
   "scripts": {
     "prepublishOnly": "npm-run-all -s validate build",
     "validate": "npm-run-all -p lint test",
@@ -25,40 +44,6 @@
     "lint:ts": "tslint src/**/*.ts -c tslint.json -p tsconfig.json -t verbose",
     "prettify": "prettier --write \"src/**/*.{js,ts,json}\" \"tool/scaffold/src/**/*.{js,ts,json}\" \"tool/convert/src/**/*.{js,ts,json}\"",
     "precommit": "lint-staged"
-  },
-  "lint-staged": {
-    "linters": {
-      "src/**/*.{js,ts,json}": [
-        "prettier --write",
-        "git add"
-      ],
-      "src/**/*.js": [
-        "npm run lint:js"
-      ],
-      "src/**/*.ts": [
-        "npm run lint:ts"
-      ]
-    }
-  },
-  "pre-push": [
-    "validate"
-  ],
-  "author": "Ricco Arntz <ricco@mediamonks.com> (https://github.com/riccomediamonks)",
-  "homepage": "https://www.mediamonks.com/",
-  "license": "MIT",
-  "keywords": [
-    "seng",
-    "mediamonks",
-    "muban",
-    "transition",
-    "muban-transition-component"
-  ],
-  "bugs": {
-    "url": "https://github.com/riccomediamonks/muban-transition-component/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/riccomediamonks/muban-transition-component.git"
   },
   "devDependencies": {
     "@babel/cli": "^7.23.0",
@@ -128,5 +113,19 @@
   "peerDependencies": {
     "gsap": "^3.13.0",
     "muban-core": "^1.13.1"
+  },
+  "lint-staged": {
+    "linters": {
+      "src/**/*.{js,ts,json}": [
+        "prettier --write",
+        "git add"
+      ],
+      "src/**/*.js": [
+        "npm run lint:js"
+      ],
+      "src/**/*.ts": [
+        "npm run lint:ts"
+      ]
+    }
   }
 }

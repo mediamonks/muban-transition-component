@@ -1,0 +1,33 @@
+# NOTE: taken from https://github.com/MylesBorins/node-osc/blob/main/.github/workflows/bump-version.yml
+
+name: Publish package to npmjs
+env:
+  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+on:
+  release:
+    types: [created]
+jobs:
+  bump-version:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install dependencies and build
+        env:
+          NPM_CONFIG_PROVENANCE: true
+        run: |
+          yarn install
+          yarn build
+
+      - name: Publish
+        run: yarn publish

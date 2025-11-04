@@ -1205,11 +1205,6 @@
   resolved "https://registry.yarnpkg.com/@types/deep-eql/-/deep-eql-4.0.2.tgz#334311971d3a07121e7eb91b684a605e7eea9cbd"
   integrity sha512-c9h9dVVMigMPc4bwTvC5dxqtqJZwQPePsWjPlpSOnojbor6pGqdk541lfA7AqFQr5pB1BRdq0juY9db81BwyFw==
 
-"@types/gsap@^1.19.2":
-  version "1.20.2"
-  resolved "https://registry.yarnpkg.com/@types/gsap/-/gsap-1.20.2.tgz#038d0e81a8dd50b9b6894f34f3cd4045f71c62b8"
-  integrity sha512-i9nUsnS32+VTgoX5IlaCYukJpCoB3c6h3bZvO67aIRdb3z8NFTWgeUDpQutLyb1ujowp6nw37qLQNvEowqq8yw==
-
 "@types/json5@^0.0.29":
   version "0.0.29"
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
@@ -5800,7 +5795,7 @@ seng-event@^1.2.3:
     "@babel/runtime" "^7.0.0-beta.42"
     seng-disposable "^1.1.3"
 
-seng-event@^2.0.2:
+seng-event@^2.0.1, seng-event@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/seng-event/-/seng-event-2.0.2.tgz#9ecbdbc811b2f21df05ee8c73078b1d57d52d166"
   integrity sha512-sBkVy9Bkfmlq3ISfQNiDQ1QU4E1U5MCV0hDQFBgHe8+cQVAE/D/z5HBZIDUenUnkNgOZd+NmOOvrTrmE80tTGQ==
@@ -6359,17 +6354,14 @@ tr46@^1.0.1:
   dependencies:
     punycode "^2.1.0"
 
-transition-controller@^1.3.1:
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/transition-controller/-/transition-controller-1.3.1.tgz#37614474859498d9c39dbb775996c198781ef2f7"
-  integrity sha512-V02AT3kTO/ImTE1vxzsi/3tSSH4zNdx7rp4lRMHwpLBvIxWXup+mo6IFictTRqHFxbgzTxzQxmf/IKxH6RcBnQ==
+"transition-controller@file:../transition-controller":
+  version "3.0.0"
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.3.4"
     "@babel/plugin-proposal-object-rest-spread" "^7.3.4"
     "@babel/runtime" "^7.3.4"
-    "@types/gsap" "^1.19.2"
     lodash "^4.17.11"
-    seng-event "^1.2.3"
+    seng-event "^2.0.1"
 
 trim-right@^1.0.1:
   version "1.0.1"

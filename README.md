@@ -1,3 +1,10 @@
+# @mediamonks/muban-transition-component-legacy
+
+> ⚠️ This package is compatible with the legacy version of
+> [Muban](https://mediamonks.github.io/muban/), please use
+> [@mediamonks/muban-transition-component](https://www.npmjs.com/package/@mediamonks/muban-transition-component) for
+> [newer versions of Muban](https://mubanjs.github.io/muban/)
+
 Provides GreenSock transition functionality to [muban](https://mediamonks.github.io/muban/) components.
 
 ## Table of contents
@@ -14,11 +21,11 @@ Provides GreenSock transition functionality to [muban](https://mediamonks.github
 ### yarn / npm
 
 ```sh
-yarn add muban-transition-component
+yarn add @mediamonks/muban-transition-component-legacy
 ```
 
 ```sh
-npm i -S muban-transition-component
+npm i -S @mediamonks/muban-transition-component-legacy
 ```
 
 ## Online Demo
