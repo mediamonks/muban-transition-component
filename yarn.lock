@@ -1122,6 +1122,17 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
+"@mediamonks/transition-controller@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@mediamonks/transition-controller/-/transition-controller-3.0.0.tgz#40f73eefc894fc725d8ae83afddc623eebd09c9e"
+  integrity sha512-sz8yP+hhADvaC8LtZEvwmnCW3e36zbuwkPuQwpGW4zmRFbkN6qfFAS1BWKhfxLRwxLI/krdMRGRMIuOfvrCBbg==
+  dependencies:
+    "@babel/plugin-proposal-class-properties" "^7.3.4"
+    "@babel/plugin-proposal-object-rest-spread" "^7.3.4"
+    "@babel/runtime" "^7.3.4"
+    lodash "^4.17.11"
+    seng-event "^2.0.1"
+
 "@nicolo-ribaudo/chokidar-2@2.1.8-no-fsevents.3":
   version "2.1.8-no-fsevents.3"
   resolved "https://registry.yarnpkg.com/@nicolo-ribaudo/chokidar-2/-/chokidar-2-2.1.8-no-fsevents.3.tgz#323d72dd25103d0c4fbdce89dadf574a787b1f9b"
