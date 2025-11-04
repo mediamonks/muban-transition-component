@@ -1,10 +1,14 @@
 import CoreComponent from 'muban-core/lib/CoreComponent';
-import ChildComponentATransitionController, { TransitionId } from './ChildComponentATransitionController';
+import TransitionDirection from 'transition-controller/lib/enum/TransitionDirection';
+import ChildComponentATransitionController, {
+  TransitionId,
+} from './ChildComponentATransitionController';
 import mubanTransitionMixin from '../../../../src/lib/mixin/MubanTransitionMixin';
 import mubanTransitionCoreMixin from '../../../../src/lib/mixin/MubanTransitionCoreMixin';
-import TransitionDirection from 'transition-controller/lib/enum/TransitionDirection';
 
-export default class ChildComponentA extends mubanTransitionMixin(mubanTransitionCoreMixin(CoreComponent)) {
+export default class ChildComponentA extends mubanTransitionMixin(
+  mubanTransitionCoreMixin(CoreComponent),
+) {
   static displayName: string = 'child-component-a';
   public transitionController: ChildComponentATransitionController;
 

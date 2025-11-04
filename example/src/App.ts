@@ -1,13 +1,15 @@
 import getComponentForElement from 'muban-core/lib/utils/getComponentForElement';
-import MubanTransitionVariable from '../../src/lib/data/MubanTransitionVariable';
-import { IMubanTransitionMixin } from '../../src/lib/interface/IMubanTransitionMixin';
 import { ScrollTrackerComponentManager } from 'scroll-tracker-component-manager';
 import CoreComponent from 'muban-core/lib/CoreComponent';
+import MubanTransitionVariable from '../../src/lib/data/MubanTransitionVariable';
+import { IMubanTransitionMixin } from '../../src/lib/interface/IMubanTransitionMixin';
 
-export default class App extends CoreComponent{
+export default class App extends CoreComponent {
   static displayName: string = 'app-root';
 
-  public scrollTrackerComponentManager: ScrollTrackerComponentManager<IMubanTransitionMixin> = new ScrollTrackerComponentManager<IMubanTransitionMixin>({
+  public scrollTrackerComponentManager: ScrollTrackerComponentManager<
+    IMubanTransitionMixin
+  > = new ScrollTrackerComponentManager<IMubanTransitionMixin>({
     container: window,
     inViewProgressEnabled: true,
     setDebugLabel: true,
@@ -39,7 +41,9 @@ export default class App extends CoreComponent{
   public adopted(): void {
     this.getElements(`[${MubanTransitionVariable.scrollComponentAttribute}]`).forEach(
       (element: HTMLElement) => {
-        this.scrollTrackerComponentManager.addComponentToScrollTracker(<IMubanTransitionMixin>getComponentForElement(element));
+        this.scrollTrackerComponentManager.addComponentToScrollTracker(
+          <IMubanTransitionMixin>getComponentForElement(element),
+        );
       },
     );
   }

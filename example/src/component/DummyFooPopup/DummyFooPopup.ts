@@ -3,7 +3,9 @@ import DummyFooPopupTransitionController from './DummyFooPopupTransitionControll
 import mubanTransitionMixin from '../../../../src/lib/mixin/MubanTransitionMixin';
 import mubanTransitionCoreMixin from '../../../../src/lib/mixin/MubanTransitionCoreMixin';
 
-export default class DummyFooPopup extends mubanTransitionMixin(mubanTransitionCoreMixin(CoreComponent)) {
+export default class DummyFooPopup extends mubanTransitionMixin(
+  mubanTransitionCoreMixin(CoreComponent),
+) {
   static displayName: string = 'dummy-foo-popup';
   public transitionController: DummyFooPopupTransitionController;
 
@@ -19,7 +21,9 @@ export default class DummyFooPopup extends mubanTransitionMixin(mubanTransitionC
    * @method addEventListeners
    */
   private addEventListeners(): void {
-    this.element.querySelector('.js-button-close').addEventListener('click', this.handleClosePopupClick.bind(this));
+    this.element
+      .querySelector('.js-button-close')
+      ?.addEventListener('click', this.handleClosePopupClick.bind(this));
   }
 
   /**
@@ -34,6 +38,3 @@ export default class DummyFooPopup extends mubanTransitionMixin(mubanTransitionC
     super.dispose();
   }
 }
-
-
-

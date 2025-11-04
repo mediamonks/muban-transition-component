@@ -1,0 +1,19 @@
+{
+  "entryPoints": ["./src/index.ts"],
+  "out": "./docs/",
+  "theme": "default",
+  "excludeExternals": true,
+  "excludePrivate": true,
+  "excludeProtected": false,
+  "excludeInternal": false,
+  "readme": "./README.md",
+  "name": "Muban Transition Component",
+  "includeVersion": true,
+  "gitRevision": "master",
+  "exclude": [
+    "**/node_modules/**",
+    "**/test/**",
+    "**/example/**"
+  ],
+  "skipErrorChecking": true
+}

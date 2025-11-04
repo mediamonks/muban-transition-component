@@ -1,0 +1,16 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "../",
+    "baseUrl": "./",
+    "outDir": "./dist",
+    "noEmit": false,
+    "skipLibCheck": true,
+    "paths": {
+      "muban-transition-component": ["../src/index.ts"],
+      "muban-transition-component/*": ["../src/*"]
+    }
+  },
+  "include": ["./src/**/*", "../src/**/*"],
+  "exclude": ["node_modules", "dist", "../node_modules", "../test", "../docs"]
+}

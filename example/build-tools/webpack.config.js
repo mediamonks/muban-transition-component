@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   devServer: {
-    contentBase: './',
+    static: './',
   },
   resolve: {
     extensions: ['.js', '.ts'],
@@ -12,6 +12,9 @@ module.exports = {
       {
         test: /.ts$/,
         loader: 'ts-loader',
+        options: {
+          configFile: path.resolve(__dirname, '../tsconfig.json'),
+        },
       },
     ],
   },

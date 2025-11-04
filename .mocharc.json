@@ -1,0 +1,9 @@
+{
+  "require": [
+    "./test/_setup/setup.js",
+    "jsdom-global/register"
+  ],
+  "extensions": ["ts", "js"],
+  "spec": "./test/**/*.spec.{ts,js}",
+  "exit": true
+}

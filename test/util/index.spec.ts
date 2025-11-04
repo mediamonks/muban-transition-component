@@ -1,14 +1,14 @@
-import ChildComponentA from './component/ChildComponentA/ChildComponentA';
-import ChildComponentB from './component/ChildComponentB/ChildComponentB';
-import App from './App';
 import { registerComponent } from 'muban-core';
 import initComponents from 'muban-core/lib/utils/initComponents';
 import cleanElement from 'muban-core/lib/utils/cleanElement';
 import getComponentForElement from 'muban-core/lib/utils/getComponentForElement';
-import { IMubanTransitionMixin } from 'src/lib/interface/IMubanTransitionMixin';
+import App from './App';
+import ChildComponentB from './component/ChildComponentB/ChildComponentB';
+import ChildComponentA from './component/ChildComponentA/ChildComponentA';
+import { IMubanTransitionMixin } from '../../src/lib/interface/IMubanTransitionMixin';
 
 export const getDocument = () => {
-  const body =  document.createElement('body');
+  const body = document.createElement('body');
   body.innerHTML = `
       <div id="app" data-component="app-root">
           <section data-component="child-component-a" data-scroll-component class="child-component-a">
@@ -23,31 +23,23 @@ export const getDocument = () => {
   return <HTMLBodyElement>body;
 };
 
-const componentList = [
- ChildComponentB,
- ChildComponentA,
- App,
-];
+const componentList = [ChildComponentB, ChildComponentA, App];
 
-let nodeTemplate = <HTMLElement>getDocument().querySelector('#app');
-export let appNode;
+const nodeTemplate = <HTMLElement>getDocument().querySelector('#app');
+let appNode: HTMLElement;
 
-export const render = function () {
-  appNode = nodeTemplate.cloneNode(true);
+export const render = () => {
+  appNode = nodeTemplate.cloneNode(true) as HTMLElement;
   cleanElement(appNode);
 
-  componentList.forEach(function (blockConstructor) {
-    registerComponent(blockConstructor);
-  });
-
+  // eslint-disable-next-line arrow-parens
+  componentList.forEach(blockConstructor => registerComponent(blockConstructor));
   initComponents(appNode);
 };
 
-export const getComponent = function (displayName: string) {
+export const getComponent = (displayName: string) => {
   const componentElement = <HTMLElement>appNode.querySelector(`[data-component="${displayName}"]`);
   return <IMubanTransitionMixin>getComponentForElement(componentElement);
 };
 
-export const getApp = function() {
-  return <IMubanTransitionMixin>getComponentForElement(appNode)
-};
+export const getApp = () => <IMubanTransitionMixin>getComponentForElement(appNode);

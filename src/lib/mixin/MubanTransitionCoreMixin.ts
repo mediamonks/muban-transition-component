@@ -1,6 +1,7 @@
 import EventDispatcher from 'seng-event';
-import MubanTransitionVariable from '../data/MubanTransitionVariable';
 import ICoreComponent from 'muban-core/lib/interface/ICoreComponent';
+import { Constructor } from '../../types';
+import MubanTransitionVariable from '../data/MubanTransitionVariable';
 
 function mubanTransitionCoreMixin<TBase extends Constructor<ICoreComponent>>(Base: TBase) {
   return class MubanTransitionCoreMixin extends Base {
@@ -15,12 +16,12 @@ function mubanTransitionCoreMixin<TBase extends Constructor<ICoreComponent>>(Bas
     constructor(...args: any[]) {
       super(...args);
 
-      this.eventNamespace = '.' + ++MubanTransitionCoreMixin.eventNamespaceCount;
+      this.eventNamespace = `.${++MubanTransitionCoreMixin.eventNamespaceCount}`;
       this.componentId = this.displayName + this.eventNamespace;
     }
 
     public get displayName() {
-      return this.element.getAttribute(MubanTransitionVariable.componentAttribute);
+      return this.element.getAttribute(MubanTransitionVariable.componentAttribute) as string;
     }
   };
 }

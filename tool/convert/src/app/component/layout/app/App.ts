@@ -6,7 +6,9 @@ import getComponentForElement from 'muban-core/lib/utils/getComponentForElement'
 export default class App extends AbstractComponent {
   public static readonly displayName: string = 'app-root';
 
-  public scrollTrackerComponentManager: ScrollTrackerComponentManager<IMubanTransitionMixin> = new ScrollTrackerComponentManager<IMubanTransitionMixin>({
+  public scrollTrackerComponentManager: ScrollTrackerComponentManager<
+    IMubanTransitionMixin
+  > = new ScrollTrackerComponentManager<IMubanTransitionMixin>({
     inViewProgressEnabled: false,
     setDebugLabel: true,
     debugBorderColor: 'red',
@@ -33,7 +35,9 @@ export default class App extends AbstractComponent {
   public adopted(): void {
     this.getElements(`[${MubanTransitionVariable.scrollComponentAttribute}]`).forEach(
       (element: HTMLElement) => {
-        this.scrollTrackerComponentManager.addComponentToScrollTracker(<IMubanTransitionMixin>getComponentForElement(element));
+        this.scrollTrackerComponentManager.addComponentToScrollTracker(
+          <IMubanTransitionMixin>getComponentForElement(element),
+        );
       },
     );
   }

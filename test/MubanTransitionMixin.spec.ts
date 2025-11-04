@@ -1,22 +1,23 @@
 import chai, { expect } from 'chai';
 import sinon from 'sinon';
-import 'chai/register-should';
 import sinonChai from 'sinon-chai';
-import { render, getComponent } from './util/index.spec';
-import { TransitionId } from '../test/util/component/ChildComponentA/ChildComponentATransitionController';
 import { TransitionDirection } from 'transition-controller';
+import { render, getComponent } from './util/index.spec';
+import { TransitionId } from './util/component/ChildComponentA/ChildComponentATransitionController';
+import ChildComponentA from './util/component/ChildComponentA/ChildComponentA';
+
 chai.use(sinonChai);
 
 describe('MubanTransitionMixin.spec', () => {
-  let component;
+  let component: ChildComponentA;
 
-  before(function () {
+  before(() => {
     render();
-    component = getComponent('child-component-a');
+    component = getComponent('child-component-a') as ChildComponentA;
   });
 
-  describe('transitionOut', function () {
-    it('should transitionOut the component forced', function () {
+  describe('transitionOut', () => {
+    it('should transitionOut the component forced', () => {
       const force = true;
       const reset = false;
       const label = TransitionId[TransitionDirection.OUT].TRANSITION_ID_1;
@@ -28,20 +29,20 @@ describe('MubanTransitionMixin.spec', () => {
     });
   });
 
-  describe('transitionOut', function () {
-    it('should transitionOut the component', function () {
+  describe('transitionOut', () => {
+    it('should transitionOut the component', () => {
       expect(component.transitionOut()).to.be.a('promise');
     });
   });
 
-  describe('transitionIn', function () {
-    it('should transitionIn the component', function () {
+  describe('transitionIn', () => {
+    it('should transitionIn the component', () => {
       expect(component.transitionIn()).to.be.a('promise');
     });
   });
 
-  describe('transitionIn', function () {
-    it('should force the transitionIn', function () {
+  describe('transitionIn', () => {
+    it('should force the transitionIn', () => {
       const force = true;
       const spy = sinon.spy(component.transitionController, 'transitionIn');
 
@@ -51,8 +52,8 @@ describe('MubanTransitionMixin.spec', () => {
     });
   });
 
-  describe('enterView', function () {
-    it('should enterView the component', function () {
+  describe('enterView', () => {
+    it('should enterView the component', () => {
       const spy = sinon.spy(component, 'transitionIn');
       expect(component.enterView()).to.be.undefined;
       expect(spy).to.be.calledOnce;
@@ -60,20 +61,20 @@ describe('MubanTransitionMixin.spec', () => {
     });
   });
 
-  describe('inViewProgress', function () {
-    it('should inViewProgress the component', function () {
-      expect(component.inViewProgress()).to.be.undefined;
+  describe('inViewProgress', () => {
+    it('should inViewProgress the component', () => {
+      expect(component.inViewProgress(1)).to.be.undefined;
     });
   });
 
-  describe('leaveView', function () {
-    it('should leaveView the component', function () {
+  describe('leaveView', () => {
+    it('should leaveView the component', () => {
       expect(component.leaveView()).to.be.undefined;
     });
   });
 
-  describe('beyondView', function () {
-    it('should beyondView the component 1 ', function () {
+  describe('beyondView', () => {
+    it('should beyondView the component 1 ', () => {
       const spy = sinon.spy(component, 'transitionIn');
       component.hasEntered = false;
       expect(component.beyondView()).to.be.undefined;
@@ -81,7 +82,7 @@ describe('MubanTransitionMixin.spec', () => {
       spy.restore();
     });
 
-    it('should beyondView the component 2', function () {
+    it('should beyondView the component 2', () => {
       const spy = sinon.spy(component, 'transitionIn');
       component.hasEntered = true;
       expect(component.beyondView()).to.be.undefined;
@@ -90,7 +91,7 @@ describe('MubanTransitionMixin.spec', () => {
     });
   });
 
-  describe('startLoopingAnimation', function () {
+  describe('startLoopingAnimation', () => {
     it('should startLoopingAnimation the component', () => {
       expect(component.startLoopingAnimation()).to.be.undefined;
     });
@@ -102,19 +103,19 @@ describe('MubanTransitionMixin.spec', () => {
   //   });
   // });
 
-  describe('stopLoopingAnimation',  () => {
+  describe('stopLoopingAnimation', () => {
     it('should stopLoopingAnimation the component', () => {
       expect(component.stopLoopingAnimation()).to.be.undefined;
     });
   });
 
-  describe('enterViewThreshold', function () {
+  describe('enterViewThreshold', () => {
     it('enterViewThreshold should be a number', () => {
       expect(component.enterViewThreshold).to.be.a('number');
     });
   });
 
-  describe('hasEntered', function () {
+  describe('hasEntered', () => {
     it('hasEntered should be a boolean', () => {
       expect(component.hasEntered).to.be.a('boolean');
     });
