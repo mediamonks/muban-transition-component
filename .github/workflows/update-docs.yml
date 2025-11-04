@@ -28,10 +28,11 @@ jobs:
         with:
           node-version: lts/*
 
-      - name: Build Storybook
-        run: |
-          yarn install
-          yarn doc
+      # TODO: Fix docs build, requires mkdocs
+      # - name: Build Docs
+      #   run: |
+      #     yarn install
+      #     yarn doc
 
       - name: Create artifact
         uses: actions/upload-pages-artifact@v3
