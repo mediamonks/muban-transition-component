@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { TransitionDirection } from 'transition-controller';
+import { TransitionDirection } from '@mediamonks/transition-controller';
 import { render, getComponent, getApp } from './util/index.spec';
 import ChildComponentA from './util/component/ChildComponentA/ChildComponentA';
 import App from './util/App';

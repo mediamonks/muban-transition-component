@@ -1,4 +1,4 @@
-import AbstractTransitionController from 'transition-controller';
+import AbstractTransitionController from '@mediamonks/transition-controller';
 import EventDispatcher from 'seng-event/lib/EventDispatcher';
 import { Constructor } from '../../types';
 import { IMubanTransitionCoreMixin } from '../interface/IMubanTransitionCoreMixin';

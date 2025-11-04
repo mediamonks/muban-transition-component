@@ -1,4 +1,4 @@
-import AbstractTransitionController from 'transition-controller';
+import AbstractTransitionController from '@mediamonks/transition-controller';
 import getComponentForElement from 'muban-core/lib/utils/getComponentForElement';
 import isElement from 'lodash/isElement';
 import isString from 'lodash/isString';

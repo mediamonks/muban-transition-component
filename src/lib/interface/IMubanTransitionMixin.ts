@@ -1,4 +1,4 @@
-import AbstractTransitionController from 'transition-controller';
+import AbstractTransitionController from '@mediamonks/transition-controller';
 import { IMubanTransitionCoreMixin } from './IMubanTransitionCoreMixin';
 
 export interface IMubanTransitionMixin extends IMubanTransitionCoreMixin {

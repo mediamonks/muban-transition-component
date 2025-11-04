@@ -1,7 +1,7 @@
 import chai, { expect } from 'chai';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
-import { TransitionDirection } from 'transition-controller';
+import { TransitionDirection } from '@mediamonks/transition-controller';
 import { render, getComponent } from './util/index.spec';
 import { TransitionId } from './util/component/ChildComponentA/ChildComponentATransitionController';
 import ChildComponentA from './util/component/ChildComponentA/ChildComponentA';
